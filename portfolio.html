@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>text-overflow</title>
+    <style>
+        
+        
+        body {
+            width: auto;
+            background-color: #E2E2E2;
+            margin: 0 auto;
+        }
+
+        #items {
+            overflow-x: scroll;
+            width: auto;
+            white-space: nowrap;
+            padding: 70px;
+        }
+
+        .item {
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            transform: rotate(-45deg);
+            background: url(3d-web-fest-2017.png) 40% 40%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 150px 200px 0 200px;
+
+        }
+
+        .whiteBox {
+            position: absolute;
+            height: 85px;
+            width: 380px;
+            transform: rotate(0deg);
+            margin: 85px 150px 0 -65px;
+            background-color: white;
+            background: inherit;
+            overflow: hidden;
+        }
+
+        .whiteBox:before {
+            content: " ";
+            width: 600px;
+            height: 600px;
+            background: inherit;
+            position: absolute;
+            left: -25px;
+            right: 0;
+            top: -25px;
+            bottom: 0;
+            box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
+            filter: blur(10px);
+        }
+
+        p {
+            position: absolute;
+            margin: 85px 150px 0 -65px;
+            color: white;
+            font-family: monospace;
+            font-size: 60;
+            z-index: 100;
+            padding: 35px 0 0 148px;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div id="items">
+
+        <div class="item" id="img1">
+            <p>3D MODELING</p>
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item" id="img2">
+            <p>WEB DESIGN</p>
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+        <div class="item">
+            <div class="whiteBox"></div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
