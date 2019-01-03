@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.typekit.net/nzb3bys.css">
+
+
     <title>text-overflow</title>
     <style>
         body {
@@ -58,7 +61,8 @@
             white-space: nowrap;
             overflow: hidden;
             margin-left: -0px;
-            animation: linearwipe 0.5s steps(60, end);
+            animation: linearwipe 0.9s steps(150, end);
+
 
 
         }
@@ -74,6 +78,52 @@
             width: 250px;
             border: none;
             z-index: 10;
+            cursor: pointer;
+        }
+
+        .fade-out {
+            opacity: 1;
+            animation-name: fadeOutOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOutOpacity {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .fade-in {
+            opacity: 1;
+            animation-name: fadeInOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInOpacity {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .narrativeText {
+            font-family: 'Source Sans Pro', sans-serif;
+            opacity: 0;
+            color: black;
+            z-index: 10;
         }
 
     </style>
@@ -87,8 +137,11 @@
                 <div class="spaces"></div>
                 <div class="spaces"></div>
                 <div class="spaces"></div>
-                <div class="spaces" id="logo"><button id="button" onclick="changeDisplay();"></button>
-
+                <div class="spaces" id="center">
+                    <div id="logo">
+                        <button id="button" onclick="changeDisplay();"></button>
+                    </div>
+                    <div class="narrativeText">Hi, my name is Lauren</div>
                 </div>
                 <div class="spaces"></div>
                 <div class="spaces"></div>
@@ -102,15 +155,21 @@
 </body>
 
 <script>
+    document.getElementById("logo").className = "fade-in";
+
     function changeDisplay() {
         console.log("hello");
-        var background = document.getElementById("whole");
         var logo = document.getElementById("logo");
         var button = document.getElementById("button");
-
-        background.style.backgroundColor = "gainsboro";
-        logo.style.visibility = "hidden";
+        document.getElementById("darkWhole").className = "fade-out";
+        document.getElementById("logo").className = "fade-out";
+        document.getElementById("button").className = "fade-out";
+        document.getElementsByClassName("narrativeText").className = "fade-in";
         button.style.visibility = "hidden";
+        logo.style.visibility = "hidden";
+        
+
+
     }
 
 </script>
