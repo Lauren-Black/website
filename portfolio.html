@@ -16,7 +16,6 @@
         #darkWhole {
             background-color: #1e1e1e;
             height: 100vh;
-            background-size: cover;
         }
 
         #whole {
@@ -47,7 +46,7 @@
 
         }
 
-        
+
 
         #button:hover {
             visibility: visible;
@@ -114,61 +113,80 @@
                 opacity: 1;
             }
         }
-        
+
         .delay {
             opacity: 0;
             animation-name: appearDelayTiming;
             animation-iteration-count: 1;
             animation-timing-function: ease-in;
-            animation-duration: 1.5s;
+            animation-duration: 1s;
             animation-fill-mode: forwards;
             animation-delay: 1.8s;
+
+
+
         }
 
         @keyframes appearDelayTiming {
             0% {
                 opacity: 0;
+
             }
+
 
             100% {
                 opacity: 1;
+                -ms-transform: translate(0, 4px);
+                /* IE 9 */
+                -webkit-transform: translate(0, 4px);
+                transform: translate(0, 4px);
             }
+
         }
-        
-        .wipein{
+
+        .textwipe {
             animation-iteration-count: 1;
             animation-timing-function: ease-in;
             animation-fill-mode: forwards;
-            animation: linearwipe 4s steps(90, end);
+            animation: textwipe 4s steps(90, end);
         }
 
-        #narrativeText {
+        #narrativeText1 {
             font-family: 'Source Sans Pro', sans-serif;
             opacity: 0;
             width: 30em;
             color: black;
             position: fixed;
-            padding-left: 100px;
+            padding-left: 35%;
             top: 50%;
             font-size: 3em;
-            white-space: nowrap;
-            overflow: hidden;
-            
-            
         }
-        
+
+        .text {
+            font-family: 'Source Sans Pro', sans-serif;
+            opacity: 0;
+            width: 30em;
+            color: black;
+        }
+
         @keyframes linearwipe {
             from {
                 width: 0;
             }
         }
 
+        @keyframes textwipe {
+            from {
+                height: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="whole">
-       <div id="narrativeText">Hi, my name is Lauren</div>
+        <div class="text" id="narrativeText1">Hi, my name is Lauren</div>
+        <div class="text" id="narrativeText2">Im and Interaction Designer</div>
         <div id="darkWhole">
             <div id="container">
                 <div class="spaces"></div>
@@ -179,7 +197,7 @@
                     <div id="logo">
                         <button id="button" onclick="changeDisplay();"></button>
                     </div>
-                    
+
                 </div>
                 <div class="spaces"></div>
                 <div class="spaces"></div>
@@ -202,16 +220,15 @@
         document.getElementById("darkWhole").className = "fade-out";
         document.getElementById("logo").className = "fade-out";
         document.getElementById("button").className = "fade-out";
-        document.getElementById("narrativeText").className = "fade-in";
-        document.getElementById("narrativeText").className = "delay";
-        document.getElementById("narrativeText").className = "linearwipe";
+        document.getElementById("narrativeText1").className = "fade-in";
+        document.getElementById("narrativeText1").className = "delay";
+        //document.getElementById("narrativeText").className = "textwipe";
         button.style.visibility = "hidden";
         logo.style.visibility = "hidden";
-        
+
 
 
     }
-
 </script>
 
 
