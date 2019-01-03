@@ -7,16 +7,113 @@
     <style>
         body {
             width: auto;
-            background-color: #E2E2E2;
             margin: 0 auto;
+        }
+
+        #darkWhole {
+            background-color: #1e1e1e;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        #whole {
+            background-color: gainsboro;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        #container {
+            padding-bottom: 20%;
+            height: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-row-gap: 15px;
+            grid-column-gap: 15px;
+        }
+
+        #logo {
+            /*background-color: rebeccapurple;*/
+            height: 250px;
+            width: 250px;
+            margin: 0 auto;
+            position: relative;
+            background-image: url(img/logoMed.svg);
+            background-repeat: no-repeat;
+
+
+        }
+
+        @keyframes linearwipe {
+            from {
+                width: 0;
+            }
+        }
+
+        #button:hover {
+            visibility: visible;
+            background-image: url(img/logoYellow.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: -0px;
+            animation: linearwipe 0.5s steps(60, end);
+
+
+        }
+
+        .spaces {
+            height: 200px;
+            /*background-color: red;*/
+        }
+
+        #button {
+            background-color: transparent;
+            height: 250px;
+            width: 250px;
+            border: none;
+            z-index: 10;
+        }
+
     </style>
 </head>
 
 <body>
+    <div id="whole">
+        <div id="darkWhole">
+            <div id="container">
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces" id="logo"><button id="button" onclick="changeDisplay();"></button>
 
+                </div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+                <div class="spaces"></div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
+
+<script>
+    function changeDisplay() {
+        console.log("hello");
+        var background = document.getElementById("whole");
+        var logo = document.getElementById("logo");
+        var button = document.getElementById("button");
+
+        background.style.backgroundColor = "gainsboro";
+        logo.style.visibility = "hidden";
+        button.style.visibility = "hidden";
+    }
+
+</script>
 
 
 </html>
