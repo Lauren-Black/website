@@ -95,6 +95,26 @@
             }
         }
 
+        .fade-out-delay {
+            opacity: 1;
+            animation-name: fadeOutOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes fadeOutOpacity {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
         .fade-in {
             opacity: 1;
             animation-name: fadeInOpacity;
@@ -122,9 +142,16 @@
             animation-duration: 1s;
             animation-fill-mode: forwards;
             animation-delay: 1.8s;
+        }
 
-
-
+        .delay2 {
+            opacity: 0;
+            animation-name: appearDelayTiming;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 4s;
         }
 
         @keyframes appearDelayTiming {
@@ -158,6 +185,17 @@
             color: black;
             position: fixed;
             padding-left: 35%;
+            top: 50%;
+            font-size: 3em;
+        }
+
+        #narrativeText2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            opacity: 0;
+            width: 30em;
+            color: black;
+            position: fixed;
+            padding-left: 30%;
             top: 50%;
             font-size: 3em;
         }
@@ -222,6 +260,7 @@
         document.getElementById("button").className = "fade-out";
         document.getElementById("narrativeText1").className = "fade-in";
         document.getElementById("narrativeText1").className = "delay";
+
         //document.getElementById("narrativeText").className = "textwipe";
         button.style.visibility = "hidden";
         logo.style.visibility = "hidden";
@@ -229,6 +268,9 @@
 
 
     }
+    document.getElementById("narrativeText2").className = "fade-in";
+    document.getElementById("narrativeText2").className = "delay2";
+    document.getElementById("narrativeText1").className = "fade-out-delay";
 </script>
 
 
