@@ -47,11 +47,7 @@
 
         }
 
-        @keyframes linearwipe {
-            from {
-                width: 0;
-            }
-        }
+        
 
         #button:hover {
             visibility: visible;
@@ -118,12 +114,53 @@
                 opacity: 1;
             }
         }
+        
+        .delay {
+            opacity: 0;
+            animation-name: appearDelayTiming;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            animation-delay: 1.8s;
+        }
 
-        .narrativeText {
+        @keyframes appearDelayTiming {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .wipein{
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+            animation: linearwipe 4s steps(90, end);
+        }
+
+        #narrativeText {
             font-family: 'Source Sans Pro', sans-serif;
             opacity: 0;
+            width: 30em;
             color: black;
-            z-index: 10;
+            position: fixed;
+            padding-left: 100px;
+            top: 50%;
+            font-size: 3em;
+            white-space: nowrap;
+            overflow: hidden;
+            
+            
+        }
+        
+        @keyframes linearwipe {
+            from {
+                width: 0;
+            }
         }
 
     </style>
@@ -131,6 +168,7 @@
 
 <body>
     <div id="whole">
+       <div id="narrativeText">Hi, my name is Lauren</div>
         <div id="darkWhole">
             <div id="container">
                 <div class="spaces"></div>
@@ -141,7 +179,7 @@
                     <div id="logo">
                         <button id="button" onclick="changeDisplay();"></button>
                     </div>
-                    <div class="narrativeText">Hi, my name is Lauren</div>
+                    
                 </div>
                 <div class="spaces"></div>
                 <div class="spaces"></div>
@@ -164,7 +202,9 @@
         document.getElementById("darkWhole").className = "fade-out";
         document.getElementById("logo").className = "fade-out";
         document.getElementById("button").className = "fade-out";
-        document.getElementsByClassName("narrativeText").className = "fade-in";
+        document.getElementById("narrativeText").className = "fade-in";
+        document.getElementById("narrativeText").className = "delay";
+        document.getElementById("narrativeText").className = "linearwipe";
         button.style.visibility = "hidden";
         logo.style.visibility = "hidden";
         
