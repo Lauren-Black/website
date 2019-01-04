@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://use.typekit.net/nzb3bys.css">
+    <link rel="stylesheet" href="https://use.typekit.net/abv1jbc.css">
+
 
 
     <title>text-overflow</title>
@@ -19,7 +20,7 @@
         }
 
         #whole {
-            background-color: gainsboro;
+            background-color: #fff5f5;
             height: 100vh;
             background-size: cover;
         }
@@ -83,6 +84,10 @@
             animation-timing-function: ease-in;
             animation-duration: 1s;
             animation-fill-mode: forwards;
+            -ms-transform: translate(0, 4px);
+            /* IE 9 */
+            -webkit-transform: translate(0, 4px);
+            transform: translate(0, 4px);
         }
 
         @keyframes fadeOutOpacity {
@@ -99,10 +104,10 @@
             opacity: 1;
             animation-name: fadeOutOpacity;
             animation-iteration-count: 1;
-            animation-timing-function: ease-in;
+            animation-timing-function: ease-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-            animation-delay: 3.5s;
+            animation-delay: 1s;
         }
 
         @keyframes fadeOutOpacity {
@@ -151,7 +156,7 @@
             animation-timing-function: ease-in;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-            animation-delay: 4s;
+            animation-delay: 2s;
         }
 
         @keyframes appearDelayTiming {
@@ -179,7 +184,9 @@
         }
 
         #narrativeText1 {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'omnes-pro', sans-serif;
+            font-weight: 300;
+            font-style: normal;
             opacity: 0;
             width: 30em;
             color: black;
@@ -190,18 +197,22 @@
         }
 
         #narrativeText2 {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'omnes-pro', sans-serif;
+            font-weight: 300;
+            font-style: normal;
             opacity: 0;
             width: 30em;
             color: black;
             position: fixed;
-            padding-left: 30%;
+            padding-left: 32%;
             top: 50%;
             font-size: 3em;
         }
 
         .text {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'omnes-pro', sans-serif;
+            font-weight: 300;
+            font-style: normal;
             opacity: 0;
             width: 30em;
             color: black;
@@ -224,7 +235,7 @@
 <body>
     <div id="whole">
         <div class="text" id="narrativeText1">Hi, my name is Lauren</div>
-        <div class="text" id="narrativeText2">Im and Interaction Designer</div>
+        <div class="text" id="narrativeText2">I'm an Interaction Designer</div>
         <div id="darkWhole">
             <div id="container">
                 <div class="spaces"></div>
@@ -233,7 +244,7 @@
                 <div class="spaces"></div>
                 <div class="spaces" id="center">
                     <div id="logo">
-                        <button id="button" onclick="changeDisplay();"></button>
+                        <button id="button" onclick="changeDisplay(); setTimeout(nextText, 5000);"></button>
                     </div>
 
                 </div>
@@ -252,7 +263,7 @@
     document.getElementById("logo").className = "fade-in";
 
     function changeDisplay() {
-        console.log("hello");
+
         var logo = document.getElementById("logo");
         var button = document.getElementById("button");
         document.getElementById("darkWhole").className = "fade-out";
@@ -265,12 +276,14 @@
         button.style.visibility = "hidden";
         logo.style.visibility = "hidden";
 
-
-
     }
-    document.getElementById("narrativeText2").className = "fade-in";
-    document.getElementById("narrativeText2").className = "delay2";
-    document.getElementById("narrativeText1").className = "fade-out-delay";
+
+    function nextText() {
+        console.log("hello");
+        document.getElementById("narrativeText1").className = "fade-out";
+        document.getElementById("narrativeText2").className = "fade-in";
+        document.getElementById("narrativeText2").className = "delay2";
+    }
 </script>
 
 
