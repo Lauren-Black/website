@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://use.typekit.net/abv1jbc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 
 
@@ -100,25 +101,7 @@
             }
         }
 
-        .fade-out-delay {
-            opacity: 1;
-            animation-name: fadeOutOpacity;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-out;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-delay: 1s;
-        }
 
-        @keyframes fadeOutOpacity {
-            0% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
 
         .fade-in {
             opacity: 1;
@@ -139,42 +122,9 @@
             }
         }
 
-        .delay {
-            opacity: 0;
-            animation-name: appearDelayTiming;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-delay: 1.8s;
-        }
-
-        .delay2 {
-            opacity: 0;
-            animation-name: appearDelayTiming;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-delay: 2s;
-        }
-
-        @keyframes appearDelayTiming {
-            0% {
-                opacity: 0;
-
-            }
 
 
-            100% {
-                opacity: 1;
-                -ms-transform: translate(0, 4px);
-                /* IE 9 */
-                -webkit-transform: translate(0, 4px);
-                transform: translate(0, 4px);
-            }
 
-        }
 
         .textwipe {
             animation-iteration-count: 1;
@@ -223,19 +173,13 @@
                 width: 0;
             }
         }
-
-        @keyframes textwipe {
-            from {
-                height: 0;
-            }
-        }
     </style>
 </head>
 
 <body>
     <div id="whole">
-        <div class="text" id="narrativeText1">Hi, my name is Lauren</div>
-        <div class="text" id="narrativeText2">I'm an Interaction Designer</div>
+        <div class="text" id="narrativeText1" class="animated fadeInDown delay-2s">Hi, my name is Lauren</div>
+        <div class="text" id="narrativeText2">It's really nice to meet you</div>
         <div id="darkWhole">
             <div id="container">
                 <div class="spaces"></div>
@@ -269,20 +213,9 @@
         document.getElementById("darkWhole").className = "fade-out";
         document.getElementById("logo").className = "fade-out";
         document.getElementById("button").className = "fade-out";
-        document.getElementById("narrativeText1").className = "fade-in";
-        document.getElementById("narrativeText1").className = "delay";
 
-        //document.getElementById("narrativeText").className = "textwipe";
         button.style.visibility = "hidden";
         logo.style.visibility = "hidden";
-
-    }
-
-    function nextText() {
-        console.log("hello");
-        document.getElementById("narrativeText1").className = "fade-out";
-        document.getElementById("narrativeText2").className = "fade-in";
-        document.getElementById("narrativeText2").className = "delay2";
     }
 </script>
 
